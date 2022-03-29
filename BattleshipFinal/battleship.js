@@ -30,7 +30,6 @@ var model = {
             var locations = ship.locations;
             var index = locations.indexOf(guess);
             if (index >= 0) {
-                
                 ship.hits[index] = "hit";2222
                 view.displayMessage("Hit!");
                 view.displayHit(guess);
