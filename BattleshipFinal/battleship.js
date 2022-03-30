@@ -30,7 +30,7 @@ var model = {
             var locations = ship.locations;
             var index = locations.indexOf(guess);
             if (index >= 0) {
-                ship.hits[index] = "hit";2222
+                ship.hits[index] = "hit";
                 view.displayMessage("Hit!");
                 view.displayHit(guess);
                 if (this.isSunk(ship)) {
@@ -85,7 +85,7 @@ var model = {
             do {
                 locations = this.generateShip();
             } while (this.collision(locations));
-            this.ships[i] = locations;
+            this.ships[i].locations = locations;
         }
     },
 
@@ -149,7 +149,7 @@ function  handleKeyPress(e) {
     var fireButton = document.getElementById("fireButton");
     if (e.keyCode === 13) {
         fireButton.click()
-        //return false;
+        return false;
     }
 }
 
@@ -158,17 +158,19 @@ function init() {
     fireButton.onclick = handleFireButton;
     var guessInput = document.getElementById("guessInput");
     guessInput.onkeypress = handleKeyPress;
+    model.generateShipLocations();
     
 };
 
-window.onload(init);
+window.onload = init;
 
 
 
 
 
 
-console.log(model.generateShip());
+
+
 
 
 
