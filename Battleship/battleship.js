@@ -7,6 +7,7 @@ var hits = 0;
 var guesses = 0;
 var isSunk = false;
 //console.log(1);
+ABCD
 
 while (!isSunk) {
     guess = prompt("Ready, aim, fire! (enter a number from 0-6):");
